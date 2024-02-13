@@ -130,6 +130,9 @@ export const MainTable = () => {
         </Tbody>
       </Table>
       <HStack>
+        <Button onClick={reset} colorScheme="red" m={4}>
+          Reset
+        </Button>
         <Button
           onClick={autocomplete}
           colorScheme="purple"
@@ -137,9 +140,6 @@ export const MainTable = () => {
           disabled={pauseAutocomplete || isLoading}
         >
           {autocompleteButtonText}
-        </Button>
-        <Button onClick={reset} colorScheme="red" m={4}>
-          Reset
         </Button>
         <Button onClick={downloadFile} colorScheme="blue" m={4}>
           Download
