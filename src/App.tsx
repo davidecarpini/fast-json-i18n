@@ -6,7 +6,7 @@ function App() {
   return (
     <VStack h={"100vh"} align={"stretch"}>
       <Navbar />
-      <VStack flex={1} align="center" justify={"center"}>
+      <VStack flex={1} overflow={"auto"}>
         <MainTable />
       </VStack>
     </VStack>

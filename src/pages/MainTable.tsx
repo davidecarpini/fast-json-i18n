@@ -10,6 +10,7 @@ import {
   Th,
   Thead,
   Tr,
+  VStack,
 } from "@chakra-ui/react";
 import { I18n, useI18nState } from "../store/useI18nState";
 import { useCallback, useMemo, useState } from "react";
@@ -62,7 +63,7 @@ export const MainTable = () => {
   }, [isLoading, pauseAutocomplete]);
 
   return (
-    <Box>
+    <VStack>
       <Table>
         <Thead>
           <Tr>
@@ -125,6 +126,6 @@ export const MainTable = () => {
           Reset
         </Button>
       </HStack>
-    </Box>
+    </VStack>
   );
 };
