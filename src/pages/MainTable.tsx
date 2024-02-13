@@ -62,6 +62,22 @@ export const MainTable = () => {
     return pauseAutocomplete ? "need to recharge ChatGPT..." : "Autogenerate";
   }, [isLoading, pauseAutocomplete]);
 
+  const downloadFile = useCallback(() => {
+    const fileName = "i18n.json";
+    const json = JSON.stringify(i18n, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const href = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = fileName + ".json";
+    document.body.appendChild(link);
+    link.click();
+
+    document.body.removeChild(link);
+    URL.revokeObjectURL(href);
+  }, [i18n]);
+
   return (
     <VStack>
       <Table>
@@ -124,6 +140,9 @@ export const MainTable = () => {
         </Button>
         <Button onClick={reset} colorScheme="red" m={4}>
           Reset
+        </Button>
+        <Button onClick={downloadFile} colorScheme="blue" m={4}>
+          Download
         </Button>
       </HStack>
     </VStack>
