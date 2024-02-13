@@ -4,7 +4,7 @@ import { ChatCompletion } from "openai/resources/index.mjs";
 export class OpenAIHelper {
   private openai: OpenAI;
 
-  constructor(private _openai?: OpenAI) {
+  constructor(_openai?: OpenAI) {
     if (_openai) {
       this.openai = _openai;
     } else {

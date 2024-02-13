@@ -20,6 +20,6 @@ export const autocompleteI18nObject = async (i18n: I18n): Promise<I18n> => {
     }
     throw new Error("Failed to get response from Chat GPT.");
   } catch (e) {
-    throw new Error("Failing to fetch Chat GPT response:", e);
+    throw new Error("Failing to fetch Chat GPT response");
   }
 };
