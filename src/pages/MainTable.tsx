@@ -113,15 +113,15 @@ export const MainTable = () => {
         </Tbody>
       </Table>
       <HStack>
-        <Button onClick={autocomplete} colorScheme="purple" m={4}>
+        <Button
+          onClick={autocomplete}
+          colorScheme="purple"
+          m={4}
+          disabled={pauseAutocomplete || isLoading}
+        >
           {autocompleteButtonText}
         </Button>
-        <Button
-          onClick={reset}
-          colorScheme="red"
-          m={4}
-          disabled={pauseAutocomplete}
-        >
+        <Button onClick={reset} colorScheme="red" m={4}>
           Reset
         </Button>
       </HStack>
