@@ -62,7 +62,7 @@ export const MainTable = () => {
   }, [isLoading, pauseAutocomplete]);
 
   const downloadFile = useCallback(() => {
-    const fileName = "i18n.json";
+    const fileName = "i18n";
     const json = JSON.stringify(i18n, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const href = URL.createObjectURL(blob);
